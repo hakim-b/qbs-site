@@ -1,17 +1,16 @@
 "use client";
 
+import {
+  Bars3Icon,
+  ChevronDownIcon,
+  CubeIcon,
+  EnvelopeIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import {
-  ChevronDownIcon,
-  CloseIcon,
-  MailIcon,
-  MenuIcon,
-  NavIcon,
-  PackageIcon,
-  ProductIcon,
-} from "~/components/icons";
+import { NavIcon, ProductIcon } from "~/components/icons";
 import { Logo } from "~/components/logo";
 import { mainNav, products } from "~/lib/site";
 
@@ -84,7 +83,7 @@ export function Header() {
               <div className="dropdown-content z-50 mt-3 w-[26rem] overflow-hidden rounded-box border border-base-300 bg-base-100 p-0 shadow-lg">
                 <div className="bg-neutral px-4 py-3 text-neutral-content">
                   <p className="flex items-center gap-2 font-bold text-sm">
-                    <PackageIcon className="size-4" />
+                    <CubeIcon className="size-4" />
                     Automotive Parts
                   </p>
                   <p className="mt-0.5 text-neutral-content/70 text-xs">
@@ -145,7 +144,7 @@ export function Header() {
             href="/contact"
             className="btn btn-primary hidden rounded-full lg:inline-flex"
           >
-            <MailIcon className="size-4" />
+            <EnvelopeIcon className="size-4" />
             Get a Quote
           </Link>
           <label
@@ -153,7 +152,7 @@ export function Header() {
             className="btn btn-ghost btn-square lg:hidden"
             aria-label="Open menu"
           >
-            <MenuIcon className="size-6" />
+            <Bars3Icon className="size-6" />
           </label>
         </div>
       </div>
@@ -180,7 +179,7 @@ export function MobileNav() {
             className="btn btn-ghost btn-square btn-sm"
             aria-label="Close menu"
           >
-            <CloseIcon className="size-5" />
+            <XMarkIcon className="size-5" />
           </label>
         </div>
         <ul className="menu w-full gap-1 p-4 text-base">
@@ -200,7 +199,7 @@ export function MobileNav() {
           <li>
             <details open={pathname.startsWith("/products")}>
               <summary>
-                <PackageIcon className="size-5" />
+                <CubeIcon className="size-5" />
                 Products
               </summary>
               <ul>
@@ -234,7 +233,7 @@ export function MobileNav() {
         </ul>
         <div className="mt-auto p-4">
           <Link href="/contact" className="btn btn-primary btn-block">
-            <MailIcon className="size-4" />
+            <EnvelopeIcon className="size-4" />
             Get a Quote
           </Link>
         </div>
@@ -247,7 +246,9 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="drawer">
       <input id={drawerId} type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex min-h-dvh flex-col">{children}</div>
+      <div className="drawer-content flex min-h-dvh flex-col overflow-x-hidden">
+        {children}
+      </div>
       <MobileNav />
     </div>
   );

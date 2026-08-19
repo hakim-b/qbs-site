@@ -1,17 +1,22 @@
-import Link from "next/link";
 import {
   ArrowUpRightIcon,
+  EnvelopeIcon,
+  MapPinIcon,
+  PhoneIcon,
+} from "@heroicons/react/24/outline";
+import Link from "next/link";
+import {
   FacebookIcon,
   InstagramIcon,
   LinkedinIcon,
-  MailIcon,
-  MapPinIcon,
-  PhoneIcon,
   ProductIcon,
   YoutubeIcon,
 } from "~/components/icons";
 import { Logo } from "~/components/logo";
+import { Aurora } from "~/components/ui/aurora";
 import { site, steeringProducts, suspensionProducts } from "~/lib/site";
+
+const auroraColors = ["#0171bb", "#78be20", "#0693e3"] as const;
 
 const companyLinks = [
   { href: "/", label: "Home" },
@@ -30,9 +35,16 @@ const socialLinks = [
 export function Footer() {
   return (
     <footer className="relative overflow-hidden bg-neutral text-neutral-content">
-      <div className="pointer-events-none absolute inset-0 opacity-40">
-        <div className="absolute top-0 right-0 size-80 rounded-full bg-primary/30 blur-3xl" />
-        <div className="absolute bottom-0 left-0 size-80 rounded-full bg-accent/25 blur-3xl" />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-80"
+        aria-hidden="true"
+      >
+        <Aurora
+          colorStops={auroraColors}
+          amplitude={1.1}
+          blend={0.55}
+          speed={0.6}
+        />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
@@ -94,7 +106,7 @@ export function Footer() {
               </div>
               <div className="flex items-start gap-4 rounded-box border border-accent/20 bg-neutral-content/5 p-4">
                 <span className="grid size-10 shrink-0 place-items-center rounded-field bg-accent/20 text-accent">
-                  <MailIcon className="size-4" />
+                  <EnvelopeIcon className="size-4" />
                 </span>
                 <div>
                   <p className="mb-1 font-semibold text-accent text-xs uppercase tracking-wider">

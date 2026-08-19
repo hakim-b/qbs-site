@@ -28,7 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-theme="bluestar"
-      className={`${geistSans.variable} ${geistMono.variable} h-full scroll-pt-20 antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full overflow-x-hidden scroll-pt-20 antialiased`}
     >
       <body className="min-h-full font-sans">
         <SiteShell>
