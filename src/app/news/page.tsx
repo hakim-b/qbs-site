@@ -6,6 +6,7 @@ import {
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
+import { LogoParticles } from "~/components/ui/logo-particles";
 import { getArticles } from "~/lib/articles";
 
 function formatDate(date: string) {
@@ -58,6 +59,7 @@ export default function NewsPage() {
   if (!latest) {
     return (
       <section className="bg-base-200 px-6 py-24">
+        <LogoParticles/>
         <div className="alert alert-info mx-auto max-w-7xl">
           No articles are available yet.
         </div>
@@ -67,6 +69,7 @@ export default function NewsPage() {
 
   return (
     <div className="bg-base-200">
+        <LogoParticles/>
       <section className="mx-auto max-w-7xl px-6 pt-12 pb-20 sm:px-10 lg:px-16">
         <div className="card card-side overflow-hidden border border-base-300 bg-base-100 shadow-xl max-lg:flex-col">
           <figure className="relative min-h-72 basis-1/2 bg-neutral lg:min-h-100">

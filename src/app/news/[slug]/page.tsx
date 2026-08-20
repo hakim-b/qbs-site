@@ -9,6 +9,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { LogoParticles } from "~/components/ui/logo-particles";
 import { getArticle, getArticles } from "~/lib/articles";
 
 type ArticlePageProps = {
@@ -63,6 +64,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   return (
     <div className="bg-base-200">
+      <LogoParticles />
       <header className="bg-neutral px-6 pt-12 pb-28 text-neutral-content sm:px-10 lg:px-16">
         <div className="mx-auto max-w-5xl text-center">
           <div className="flex flex-wrap justify-center gap-2">
