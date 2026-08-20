@@ -9,6 +9,8 @@
   themes: false;
 }
 
+@plugin "@tailwindcss/typography";
+
 @plugin "daisyui/theme" {
   name: "bluestar";
   default: true;
