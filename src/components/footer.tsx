@@ -13,10 +13,7 @@ import {
   YoutubeIcon,
 } from "~/components/icons";
 import { Logo } from "~/components/logo";
-import { Aurora } from "~/components/ui/aurora";
 import { site, steeringProducts, suspensionProducts } from "~/lib/site";
-
-const auroraColors = ["#0171bb", "#78be20", "#0693e3"] as const;
 
 const companyLinks = [
   { href: "/", label: "Home" },
@@ -34,27 +31,19 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-neutral text-neutral-content">
+    <footer className="relative isolate overflow-hidden bg-neutral text-neutral-content">
       <div
-        className="pointer-events-none absolute inset-0 opacity-80"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(6,147,227,0.2),transparent_42%),linear-gradient(115deg,rgba(1,113,187,0.18),transparent_45%,rgba(120,190,32,0.08))]"
         aria-hidden="true"
-      >
-        <Aurora
-          colorStops={auroraColors}
-          amplitude={1.1}
-          blend={0.55}
-          speed={0.6}
-        />
-      </div>
-
+      />
       <div className="relative mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
-        <div className="mb-12 grid gap-10 border-primary/20 border-b pb-12 lg:grid-cols-2">
-          <div className="space-y-5">
-            <Logo onDark />
-            <p className="max-w-md text-neutral-content/70 leading-relaxed">
+        <div className="mb-12 border-primary/20 border-b pb-12">
+          <div className="flex flex-col items-center space-y-5 text-center">
+            <Logo onDark className="h-24 sm:h-28" />
+            <p className="max-w-2xl text-neutral-content/70 leading-relaxed">
               {site.description}
             </p>
-            <div className="flex gap-2 pt-1">
+            <div className="flex justify-center gap-2 pt-1">
               {socialLinks.map(({ href, label, icon: Icon }) => (
                 <a
                   key={label}
@@ -70,11 +59,11 @@ export function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="mt-12">
             <h2 className="mb-5 font-bold text-info text-lg uppercase tracking-wide">
               Get In Touch
             </h2>
-            <div className="space-y-3">
+            <div className="grid gap-3 md:grid-cols-3">
               <div className="flex items-start gap-4 rounded-box border border-primary/20 bg-neutral-content/5 p-4">
                 <span className="grid size-10 shrink-0 place-items-center rounded-field bg-primary/20 text-info">
                   <MapPinIcon className="size-4" />

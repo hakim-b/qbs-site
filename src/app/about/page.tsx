@@ -6,6 +6,7 @@ import {
   Squares2X2Icon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
+import CardSwap, { Card } from "~/components/ui/card-swap";
 import { LogoParticles } from "~/components/ui/logo-particles";
 
 function About() {
@@ -103,6 +104,10 @@ function About() {
       </section>
 
       <section className="relative overflow-hidden bg-neutral px-6 py-24 text-neutral-content sm:px-10 lg:px-16 lg:py-32">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(6,147,227,0.18),transparent_42%),linear-gradient(115deg,rgba(1,113,187,0.16),transparent_45%,rgba(120,190,32,0.07))]"
+          aria-hidden="true"
+        />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(120,190,32,0.14)_1px,transparent_1px),linear-gradient(to_bottom,rgba(1,113,187,0.16)_1px,transparent_1px)] bg-size-[5rem_5rem] opacity-30" />
         <div className="relative mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
@@ -252,6 +257,122 @@ function About() {
               </div>
             </li>
           </ul>
+        </div>
+      </section>
+
+      <section className="relative isolate overflow-hidden bg-base-200 px-6 pt-24 pb-32 sm:px-10 sm:pb-36 lg:px-16 lg:py-32">
+        <LogoParticles />
+        <div className="pointer-events-none absolute top-0 right-0 h-full w-1/2 bg-[linear-gradient(135deg,transparent_0%,rgba(1,113,187,0.08)_100%)]" />
+        <div className="relative mx-auto grid min-h-[38rem] w-full max-w-7xl items-center gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:gap-8">
+          <div className="max-w-xl">
+            <p className="mb-5 inline-block bg-accent px-4 py-2 text-xs font-bold tracking-[0.35em] text-accent-content uppercase">
+              What guides us
+            </p>
+            <h2 className="text-4xl leading-[0.95] font-black tracking-tight text-neutral uppercase sm:text-6xl">
+              The principles
+              <br />
+              <span className="text-primary">behind every part.</span>
+            </h2>
+            <p className="mt-7 max-w-lg text-lg leading-8 text-base-content/70">
+              Our mission, vision, and values shape every supplier we choose,
+              every component we inspect, and every partnership we build.
+            </p>
+            <div className="mt-10 flex items-center gap-4 text-sm font-bold tracking-[0.25em] text-neutral uppercase">
+              <span className="h-px w-12 bg-accent" />
+              Built for the road ahead
+            </div>
+          </div>
+
+          <div className="relative mx-auto h-[34rem] w-full max-w-[42rem] max-[768px]:h-[32rem]">
+            <CardSwap
+              width="min(34rem, 76vw)"
+              height="32rem"
+              cardDistance={56}
+              verticalDistance={42}
+              delay={3000}
+              pauseOnHover
+              skewAmount={4}
+              easing="elastic"
+            >
+              <Card
+                customClass="overflow-hidden border-primary/40 bg-neutral text-neutral-content shadow-2xl"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(180deg, rgba(18,20,75,0.08) 20%, rgba(18,20,75,0.94) 100%), url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1000&q=85')",
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                }}
+              >
+                <div className="flex h-full flex-col justify-end p-8 sm:p-10">
+                  <span className="mb-auto text-6xl font-black text-neutral-content/30">
+                    01
+                  </span>
+                  <p className="mb-3 text-xs font-bold tracking-[0.35em] text-accent uppercase">
+                    Our vision
+                  </p>
+                  <h3 className="text-4xl font-black uppercase">
+                    Trust in motion
+                  </h3>
+                  <p className="mt-4 max-w-md text-base leading-7 text-neutral-content/75">
+                    To be the trusted source for premium steering and suspension
+                    components across every vehicle platform.
+                  </p>
+                </div>
+              </Card>
+
+              <Card
+                customClass="overflow-hidden border-accent/50 bg-neutral text-neutral-content shadow-2xl"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(180deg, rgba(18,20,75,0.04) 20%, rgba(18,20,75,0.94) 100%), url('https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1000&q=85')",
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                }}
+              >
+                <div className="flex h-full flex-col justify-end p-8 sm:p-10">
+                  <span className="mb-auto text-6xl font-black text-neutral-content/30">
+                    02
+                  </span>
+                  <p className="mb-3 text-xs font-bold tracking-[0.35em] text-accent uppercase">
+                    Our mission
+                  </p>
+                  <h3 className="text-4xl font-black uppercase">
+                    Made to matter
+                  </h3>
+                  <p className="mt-4 max-w-md text-base leading-7 text-neutral-content/75">
+                    To deliver exceptional solutions through rigorous quality
+                    standards and expert support.
+                  </p>
+                </div>
+              </Card>
+
+              <Card
+                customClass="overflow-hidden border-primary/40 bg-neutral text-neutral-content shadow-2xl"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(180deg, rgba(18,20,75,0.04) 20%, rgba(18,20,75,0.94) 100%), url('https://images.unsplash.com/photo-1530046339912-5a0af2a4a9d3?auto=format&fit=crop&w=1000&q=85')",
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                }}
+              >
+                <div className="flex h-full flex-col justify-end p-8 sm:p-10">
+                  <span className="mb-auto text-6xl font-black text-neutral-content/30">
+                    03
+                  </span>
+                  <p className="mb-3 text-xs font-bold tracking-[0.35em] text-accent uppercase">
+                    Our values
+                  </p>
+                  <h3 className="text-4xl font-black uppercase">
+                    Quality first
+                  </h3>
+                  <p className="mt-4 max-w-md text-base leading-7 text-neutral-content/75">
+                    Precision engineering, transparent communication, and an
+                    unwavering commitment to automotive excellence.
+                  </p>
+                </div>
+              </Card>
+            </CardSwap>
+          </div>
         </div>
       </section>
     </main>
