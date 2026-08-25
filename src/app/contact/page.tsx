@@ -5,6 +5,7 @@ import {
   PaperAirplaneIcon,
   PhoneIcon,
 } from "@heroicons/react/24/outline";
+import Link from "next/link";
 import { LogoParticles } from "~/components/ui/logo-particles";
 import { site } from "~/lib/site";
 
@@ -24,12 +25,12 @@ function ContactPage() {
                 <p className="mt-1 text-sm text-base-content/60">
                   Drop us a line anytime
                 </p>
-                <a
+                <Link
                   href={`mailto:${site.email}`}
                   className="link link-primary mt-2 inline-block font-semibold"
                 >
                   {site.email}
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -44,12 +45,12 @@ function ContactPage() {
                 <p className="mt-1 text-sm text-base-content/60">
                   Monday to Friday, 9am-6pm
                 </p>
-                <a
+                <Link
                   href={site.phoneHref}
                   className="link link-primary mt-2 inline-block font-semibold"
                 >
                   {site.phone}
-                </a>
+                </Link>
               </div>
             </div>
           </div>
