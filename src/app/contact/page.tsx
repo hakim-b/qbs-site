@@ -2,10 +2,10 @@ import {
   CheckBadgeIcon,
   EnvelopeIcon,
   MapPinIcon,
-  PaperAirplaneIcon,
   PhoneIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { ContactForm } from "~/components/contact-form";
 import { LogoParticles } from "~/components/ui/logo-particles";
 import { site } from "~/lib/site";
 
@@ -99,104 +99,7 @@ function ContactPage() {
               hours.
             </p>
 
-            <form
-              className="mt-7 grid gap-5"
-              action={`mailto:${site.email}`}
-              method="post"
-              encType="text/plain"
-            >
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="form-control gap-2">
-                  <span className="label-text font-semibold text-neutral">
-                    First Name <span className="text-error">*</span>
-                  </span>
-                  <input
-                    type="text"
-                    name="firstName"
-                    placeholder="John"
-                    autoComplete="given-name"
-                    required
-                    className="input input-bordered w-full"
-                  />
-                </label>
-                <label className="form-control gap-2">
-                  <span className="label-text font-semibold text-neutral">
-                    Last Name <span className="text-error">*</span>
-                  </span>
-                  <input
-                    type="text"
-                    name="lastName"
-                    placeholder="Doe"
-                    autoComplete="family-name"
-                    required
-                    className="input input-bordered w-full"
-                  />
-                </label>
-              </div>
-
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="form-control gap-2">
-                  <span className="label-text font-semibold text-neutral">
-                    Email Address <span className="text-error">*</span>
-                  </span>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="john@example.com"
-                    autoComplete="email"
-                    required
-                    className="input input-bordered w-full"
-                  />
-                </label>
-                <label className="form-control gap-2">
-                  <span className="label-text font-semibold text-neutral">
-                    Phone Number <span className="text-error">*</span>
-                  </span>
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="+XX XX XX XX XX"
-                    autoComplete="tel"
-                    required
-                    className="input input-bordered w-full"
-                  />
-                </label>
-              </div>
-
-              <label className="form-control gap-2">
-                <span className="label-text font-semibold text-neutral">
-                  Subject <span className="text-error">*</span>
-                </span>
-                <input
-                  type="text"
-                  name="subject"
-                  placeholder="What can we help you with?"
-                  required
-                  className="input input-bordered w-full"
-                />
-              </label>
-
-              <label className="form-control gap-2">
-                <span className="label-text font-semibold text-neutral">
-                  Message <span className="text-error">*</span>
-                </span>
-                <textarea
-                  name="message"
-                  placeholder="Tell us about your project or inquiry..."
-                  maxLength={2000}
-                  required
-                  className="textarea textarea-bordered min-h-36 w-full resize-y"
-                />
-                <span className="label-text-alt self-end text-base-content/50">
-                  0/2000
-                </span>
-              </label>
-
-              <button type="submit" className="btn btn-primary mt-2 w-fit">
-                Send Message
-                <PaperAirplaneIcon className="size-5" />
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </section>
