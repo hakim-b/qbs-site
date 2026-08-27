@@ -156,7 +156,7 @@ export function Header() {
           </label>
         </div>
       </div>
-      <div className="h-0.5 bg-gradient-to-r from-primary via-secondary to-accent opacity-70" />
+      <div className="h-0.5 bg-linear-to-r from-primary via-secondary to-accent opacity-70" />
     </header>
   );
 }
@@ -165,7 +165,7 @@ export function MobileNav() {
   const pathname = usePathname();
 
   return (
-    <div className="drawer-side z-[60]">
+    <div className="drawer-side z-60">
       <label
         htmlFor={drawerId}
         aria-label="Close menu"

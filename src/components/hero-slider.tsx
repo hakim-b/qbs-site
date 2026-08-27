@@ -118,7 +118,7 @@ export function HeroSlider() {
               className={`object-cover ${
                 reduceMotion
                   ? ""
-                  : `origin-center transition-transform duration-[8000ms] ease-out ${
+                  : `origin-center transition-transform duration-8000 ease-out ${
                       index === current ? "scale-110" : "scale-100"
                     }`
               }`}
@@ -126,7 +126,7 @@ export function HeroSlider() {
           </div>
         ))}
         <div className="hero-overlay bg-neutral/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-neutral/80 via-neutral/45 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-neutral/80 via-neutral/45 to-transparent" />
       </div>
 
       <div className="hero-content relative z-10 w-full max-w-7xl justify-start px-4 py-16 pb-24 sm:px-16 lg:px-20">

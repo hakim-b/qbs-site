@@ -1,4 +1,3 @@
-/** biome-ignore-all lint/a11y/useButtonType: <explanation> */
 import Link from "next/link";
 import { HeroSlider } from "~/components/hero-slider";
 import { LogoParticles } from "~/components/ui/logo-particles";
@@ -16,7 +15,7 @@ export default function Home() {
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute right-[8%] bottom-16 size-56 rounded-[2rem] bg-accent/15 blur-2xl"
+          className="pointer-events-none absolute right-[8%] bottom-16 size-56 rounded-4xl bg-accent/15 blur-2xl"
           aria-hidden
         />
         <div
