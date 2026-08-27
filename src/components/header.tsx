@@ -10,9 +10,9 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { NavIcon, ProductIcon } from "~/components/icons";
+import { NavIcon } from "~/components/icons";
 import { Logo } from "~/components/logo";
-import { mainNav, products } from "~/lib/site";
+import { mainNav, productCategories } from "~/lib/site";
 
 const drawerId = "site-nav-drawer";
 
@@ -80,40 +80,40 @@ export function Header() {
                 Products
                 <ChevronDownIcon className="size-4" />
               </button>
-              <div className="dropdown-content z-50 mt-3 w-[26rem] overflow-hidden rounded-box border border-base-300 bg-base-100 p-0 shadow-lg">
+              <div className="dropdown-content z-50 mt-3 w-[min(90vw,70rem)] overflow-hidden rounded-box border border-base-300 bg-base-100 p-0 shadow-lg">
                 <div className="bg-neutral px-4 py-3 text-neutral-content">
                   <p className="flex items-center gap-2 font-bold text-sm">
                     <CubeIcon className="size-4" />
-                    Automotive Parts
+                    Product portfolio
                   </p>
                   <p className="mt-0.5 text-neutral-content/70 text-xs">
-                    Premium quality parts for your vehicle
+                    Equipment, services, materials, and maintenance solutions
                   </p>
                 </div>
-                <ul className="menu w-full p-2">
-                  {products.map((product) => (
-                    <li key={product.slug}>
-                      <Link
-                        href={product.href}
-                        className={
-                          pathname === product.href ? "menu-active" : ""
-                        }
-                      >
-                        <span className="grid size-9 place-items-center rounded-field bg-neutral text-neutral-content">
-                          <ProductIcon slug={product.slug} className="size-4" />
+                <div className="grid gap-4 p-5 sm:grid-cols-2 lg:grid-cols-4">
+                  {productCategories.map((category) => (
+                    <div key={category.slug}>
+                      <p className="flex items-start gap-2 font-bold text-neutral text-sm">
+                        <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-field bg-primary text-primary-content">
+                          <CubeIcon className="size-4" />
                         </span>
-                        <span>
-                          <span className="block font-semibold">
-                            {product.name}
-                          </span>
-                          <span className="block text-base-content/60 text-xs">
-                            {product.description}
-                          </span>
-                        </span>
-                      </Link>
-                    </li>
+                        {category.name}
+                      </p>
+                      <ul className="menu mt-2 w-full gap-1 p-0 text-xs">
+                        {category.groups.map((group) => (
+                          <li key={group.slug}>
+                            <Link
+                              href={`/products/${group.slug}`}
+                              className="px-2 py-1.5"
+                            >
+                              {group.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   ))}
-                </ul>
+                </div>
                 <div className="border-base-300 border-t bg-base-200 px-4 py-2 text-center text-xs">
                   Need help?{" "}
                   <Link href="/contact" className="link link-primary">
@@ -203,15 +203,34 @@ export function MobileNav() {
                 Products
               </summary>
               <ul>
-                {products.map((product) => (
-                  <li key={product.slug}>
-                    <Link
-                      href={product.href}
-                      className={pathname === product.href ? "menu-active" : ""}
+                {productCategories.map((category) => (
+                  <li key={category.slug}>
+                    <details
+                      open={category.groups.some(
+                        (group) => pathname === `/products/${group.slug}`,
+                      )}
                     >
-                      <ProductIcon slug={product.slug} className="size-4" />
-                      {product.name}
-                    </Link>
+                      <summary>
+                        <CubeIcon className="size-4" />
+                        {category.name}
+                      </summary>
+                      <ul>
+                        {category.groups.map((group) => (
+                          <li key={group.slug}>
+                            <Link
+                              href={`/products/${group.slug}`}
+                              className={
+                                pathname === `/products/${group.slug}`
+                                  ? "menu-active"
+                                  : ""
+                              }
+                            >
+                              {group.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </details>
                   </li>
                 ))}
               </ul>

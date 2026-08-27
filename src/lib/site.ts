@@ -62,6 +62,135 @@ export const products = [
   },
 ] as const;
 
+export const productCategories = [
+  {
+    slug: "equipment-machinery",
+    name: "Equipment & Machinery",
+    description:
+      "Production equipment, handling, cutting, and auxiliary systems.",
+    groups: [
+      {
+        slug: "forging",
+        name: "Forging",
+        items: ["Excentric Press", "Hydraulic Press", "Heating oven"],
+      },
+      {
+        slug: "welding",
+        name: "Welding",
+        items: ["Welding robot", "MIG welding", "Overlay welding"],
+      },
+      {
+        slug: "machining",
+        name: "Machining",
+        items: ["Lathe", "Milling", "Drilling", "Machining center"],
+      },
+      {
+        slug: "surface-treatment",
+        name: "Surface Treatment",
+        items: ["Electrophoresis", "Powder coating", "Sand blasting"],
+      },
+      {
+        slug: "material-handling",
+        name: "Material Handling",
+        items: ["Storage shelves", "Laser marking", "Packaging"],
+      },
+      {
+        slug: "cutting",
+        name: "Cutting",
+        items: ["Laser cutting", "Band saw", "Rebar cutting", "Chamfering"],
+      },
+      {
+        slug: "auxiliary-equipment",
+        name: "Auxiliary equipment",
+        items: ["Compressors", "Cooling systems", "Power generators"],
+      },
+    ],
+  },
+  {
+    slug: "tooling-engineering-services",
+    name: "Tooling, Engineering Services",
+    description:
+      "Specialist tooling and testing support for industrial production.",
+    groups: [
+      {
+        slug: "automotive-tooling",
+        name: "Automotive",
+        items: ["Machining tools", "Cutting tools"],
+      },
+      {
+        slug: "plastic-injection-tooling",
+        name: "Plastic Injection",
+        items: [
+          "Hot runner molds",
+          "Cold runner molds",
+          "Tooling & accessories",
+        ],
+      },
+      {
+        slug: "laboratory-testing-equipment",
+        name: "Laboratory & Testing equipment",
+        items: [
+          "Mechanical / physical laboratory",
+          "Chemical and Material testing",
+          "Instruments and tools",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "raw-materials-services",
+    name: "Raw materials, Services",
+    description:
+      "Reliable materials and supply services for automotive production.",
+    groups: [
+      {
+        slug: "automotive-raw-materials",
+        name: "Automotive",
+        items: ["Cold forgings", "Hot forgings", "Steel plate", "Castings"],
+      },
+      {
+        slug: "plastic-injection-materials",
+        name: "Plastic Injection",
+        items: ["Chemicals", "Additives"],
+      },
+    ],
+  },
+  {
+    slug: "maintenance-solutions",
+    name: "Maintenance Solutions",
+    description:
+      "Wear protection and maintenance solutions that keep operations moving.",
+    groups: [
+      {
+        slug: "wear-protection",
+        name: "Wear Protection",
+        items: [
+          "Ceramic linings",
+          "Cladded plates - overlay welding",
+          "Rubber linings",
+          "Castings",
+        ],
+      },
+      {
+        slug: "conveyor-screening-maintenance",
+        name: "Conveyor & Screening maintenance",
+        items: ["Conveyor maintenance", "Screening maintenance"],
+      },
+    ],
+  },
+] as const;
+
+export function getProductCategory(slug: string) {
+  return productCategories.find((category) => category.slug === slug);
+}
+
+export function getProductGroup(slug: string) {
+  for (const category of productCategories) {
+    const group = category.groups.find((item) => item.slug === slug);
+    if (group) return { ...group, category: category.name };
+  }
+}
+
 export const steeringProducts = products.filter(
   (product) => product.group === "steering",
 );

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { products } from "~/lib/product-data";
+import { ProductDetailsModal } from "./product-details-modal";
 import { LogoParticles } from "./ui/logo-particles";
 
 export function ProductGrid() {
@@ -131,9 +132,7 @@ export function ProductGrid() {
                   </p>
 
                   <div className="card-actions mt-4">
-                    <button type="button" className="btn btn-primary btn-sm">
-                      View details
-                    </button>
+                    <ProductDetailsModal product={product} />
                   </div>
                 </div>
               </article>
