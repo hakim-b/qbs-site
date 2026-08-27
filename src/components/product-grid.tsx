@@ -26,7 +26,7 @@ export function ProductGrid() {
       className="relative isolate overflow-hidden bg-base-200 px-6 py-20 lg:px-8"
     >
       <LogoParticles className="-z-10" />
-      <div className="pointer-events-none absolute inset-0 -z-10 opacity-50 [background-image:radial-gradient(circle_at_20%_20%,oklch(var(--p)/0.2)_1px,transparent_1px),radial-gradient(circle_at_80%_70%,oklch(var(--s)/0.18)_1px,transparent_1px)] [background-size:42px_42px,68px_68px]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-radial-[at_20%_20%] from-primary/20 via-transparent to-transparent opacity-50" />
 
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 max-w-2xl">
