@@ -4,7 +4,7 @@ export const site = {
   tagline: "Premium steering and suspension components",
   description:
     "Leading supplier of premium steering and suspension components. We specialize in delivering high-quality automotive parts with precision engineering and exceptional service.",
-  email: "contact@qbs-auto.com",
+  email: "info@qingdaobluestar.com",
   phone: "+86 532 0000 0000",
   phoneHref: "tel:+8653200000000",
   address:
