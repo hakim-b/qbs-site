@@ -11,6 +11,8 @@ import {
   Text,
 } from "react-email";
 
+import { site } from "~/lib/site";
+
 type WelcomeEmailProps = {
   name: string;
   subject?: string;
@@ -41,7 +43,7 @@ function WelcomeEmail({ name, subject }: WelcomeEmailProps) {
               </Text>
             ) : null}
             <Button
-              href="mailto:contact@qbs-auto.com"
+              href={`mailto:${site.email}`}
               className="rounded-md bg-black px-4 py-3 text-white"
             >
               Contact our team
